@@ -2,22 +2,24 @@
 {
     internal class Program
     {
+
+        const double PRICE_LABOUR_PER_HOUR = 86;
+        const double MAX_FLOOR_INSTALL_PER_HOUR = 20;
         static void Main(string[] args)
         {
-            
+
             Console.WriteLine("Please choose one shape: " +
                 " \n - rectangle" +
                 " \n - circle" +
                 " \n - square");
 
             string userShape = Console.ReadLine();
-            const double priceLabourPerHour = 86;
-            const double maxFloorInstallPerHour = 20;
+            
 
             switch (userShape)
             {
                 case "rectangle":
-                    
+
                     Console.WriteLine("Please enter the lenght of the room in feet: ");
                     double lenght = Convert.ToDouble(Console.ReadLine());
                     Console.WriteLine("Please enter the width of the room in feet: ");
@@ -29,8 +31,8 @@
                     double totalPriceForMaterials = rectangleArea * priceOfFlooring;
                     Console.WriteLine("Total price for materials is: " + totalPriceForMaterials + " $.");
 
-                    double necessaryTimeToInstallRectangle = rectangleArea / maxFloorInstallPerHour;
-                    double totalPriceForLabourRectangle = priceLabourPerHour * necessaryTimeToInstallRectangle;
+                    double necessaryTimeToInstallRectangle = rectangleArea / MAX_FLOOR_INSTALL_PER_HOUR;
+                    double totalPriceForLabourRectangle = PRICE_LABOUR_PER_HOUR * necessaryTimeToInstallRectangle;
 
                     Console.WriteLine("The cost for labour is " + totalPriceForLabourRectangle + " $ and the team will finish in " + necessaryTimeToInstallRectangle + " hours");
                     break;
@@ -47,8 +49,8 @@
 
                     Console.WriteLine("Total price for materials is: " + totalPriceForMaterialsCircle + "$");
 
-                    double necessaryTimeToInstallCircle = circleArea / maxFloorInstallPerHour;
-                    double totalPriceForLabourCircle = priceLabourPerHour * necessaryTimeToInstallCircle;
+                    double necessaryTimeToInstallCircle = circleArea / MAX_FLOOR_INSTALL_PER_HOUR;
+                    double totalPriceForLabourCircle = PRICE_LABOUR_PER_HOUR * necessaryTimeToInstallCircle;
 
                     Console.WriteLine("The cost for labour is " + totalPriceForLabourCircle + "$ and the team will finish in " + necessaryTimeToInstallCircle);
                     break;
@@ -65,15 +67,15 @@
 
                     Console.WriteLine("Total price for materials is: " + priceForMaterialsSquare + "$");
 
-                    double necessaryTimeToInstallSquare = areaSquare / maxFloorInstallPerHour;
-                    double totalPriceForLabourSquare = priceLabourPerHour * necessaryTimeToInstallSquare;
+                    double necessaryTimeToInstallSquare = areaSquare / MAX_FLOOR_INSTALL_PER_HOUR;
+                    double totalPriceForLabourSquare = PRICE_LABOUR_PER_HOUR * necessaryTimeToInstallSquare;
 
                     Console.WriteLine("The cost for labour is " + totalPriceForLabourSquare + "$ and the team will finish in " + necessaryTimeToInstallSquare);
-                    break;      
+                    break;
             }
-            
+
             Console.ReadLine();
-            
+
         }
     }
 }
