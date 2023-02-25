@@ -8,17 +8,17 @@
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Please choose one shape: " +
-                " \n - rectangle" +
-                " \n - circle" +
-                " \n - square");
+            Console.WriteLine("Please choose one shape by entering the corresponding number: " +
+                " \n 1 - rectangle" +
+                " \n 2 - circle" +
+                " \n 3 - square");
 
-            string userShape = Console.ReadLine();
+            int userInput = Convert.ToInt16(Console.ReadLine());
             
 
-            switch (userShape)
+            switch (userInput)
             {
-                case "rectangle":
+                case 1:
 
                     Console.WriteLine("Please enter the lenght of the room in feet: ");
                     double lenght = Convert.ToDouble(Console.ReadLine());
@@ -37,7 +37,7 @@
                     Console.WriteLine("The cost for labour is " + totalPriceForLabourRectangle + " $ and the team will finish in " + necessaryTimeToInstallRectangle + " hours");
                     break;
 
-                case "circle":
+                case 2:
 
                     Console.WriteLine("Please enter the radius of circle in feet: ");
                     double radiusCircle = Convert.ToDouble(Console.ReadLine());
@@ -55,7 +55,7 @@
                     Console.WriteLine("The cost for labour is " + totalPriceForLabourCircle + "$ and the team will finish in " + necessaryTimeToInstallCircle);
                     break;
 
-                case "square":
+                case 3:
 
                     Console.WriteLine("Please enter the lenght of the room in feet: ");
                     double length = Convert.ToDouble(Console.ReadLine());
